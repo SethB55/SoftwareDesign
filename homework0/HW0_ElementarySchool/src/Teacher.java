@@ -1,8 +1,13 @@
 public class Teacher extends Person {
+    public Teacher(){
+        this.id = idCounter;
+        idCounter++;
+    }
     private String subject;
     private String degree;
     private String university;
-    private int id =+ 1;
+    private static int idCounter = 1;
+    private int id;
     public String getSubject() {
         return subject;
     }
@@ -32,7 +37,7 @@ public class Teacher extends Person {
 
     @Override
     public String toString() {
-        return "I am " + Person.getName() + ", a teacher of "
+        return "I am " + super.getName() + ", a teacher of "
                 + university + ". I hold a " + degree + " degree from " +
                 university + ", and my ID is " + id + ".";
     }
