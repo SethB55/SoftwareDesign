@@ -10,6 +10,6 @@ public class Student extends Person{
 
     @Override
     public String toString() {
-        return "I am " + Person.getName() + ", who prefers a " + lunchPreference + " lunch.";
+        return "I am " + super.getName() + ", who prefers a " + lunchPreference + " lunch.";
     }
 }
