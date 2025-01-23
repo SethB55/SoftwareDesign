@@ -1,9 +1,9 @@
 public class Person {
-    private String name; //initializing attribute
+    private static String name; //initializing attribute
     public void setName(String name) {
         this.name = name;
     }
-    public String getName(){
+    public static String getName(){
         return name;
     }
     @Override
