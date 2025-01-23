@@ -3,6 +3,11 @@ public class Teacher extends Person {
         this.id = idCounter;
         idCounter++;
     }
+    public Teacher(String subject, String degree, String university){
+        this.subject = subject;
+        this.degree = degree;
+        this.university = university;
+    }
     private String subject;
     private String degree;
     private String university;

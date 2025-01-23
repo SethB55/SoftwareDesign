@@ -1,5 +1,11 @@
 public class Person {
     private String name; //initializing attribute
+    public Person(){
+        this.name = null;
+    }
+    public Person(String name){
+        this.name = name;
+    }
     public void setName(String name) {
         this.name = name;
     }
