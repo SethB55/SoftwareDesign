@@ -8,7 +8,6 @@ public class Person {
     }
     @Override
     public String toString() {
-        System.out.println("Your name is: " + name);
-        return super.toString();
+        return "Your name is: " + name;
     }
 }

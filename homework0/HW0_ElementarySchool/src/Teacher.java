@@ -32,9 +32,8 @@ public class Teacher extends Person {
 
     @Override
     public String toString() {
-        System.out.println("I am " + Person.getName() + ", a teacher of "
+        return "I am " + Person.getName() + ", a teacher of "
                 + university + ". I hold a " + degree + " degree from " +
-                university + ", and my ID is " + id + ".");
-        return super.toString();
+                university + ", and my ID is " + id + ".";
     }
 }
