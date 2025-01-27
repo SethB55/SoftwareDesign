@@ -1,0 +1,11 @@
+Input File, Best Distance, Best Route, Time Taken (ms)
+input4.txt, 76.53, 0 1 3 2 0 , 0
+input5.txt, 76.53, 0 1 4 3 2 0 , 0
+input6.txt, 76.53, 0 1 5 3 4 2 0 , 0
+input7.txt, 76.53, 0 1 6 3 4 5 2 0 , 1
+input8.txt, 76.53, 0 1 7 3 5 4 6 2 0 , 1
+input9.txt, 76.53, 0 1 8 3 6 5 4 7 2 0 , 4
+input10.txt, 76.53, 0 1 9 3 7 5 6 4 8 2 0 , 42
+input11.txt, 76.53, 0 1 10 3 8 5 6 7 4 9 2 0 , 135
+input12.txt, 76.53, 0 1 11 3 9 5 7 6 8 4 10 2 0 , 1496
+input13.txt, 76.53, 0 1 12 3 10 5 8 7 6 9 4 11 2 0 , 17993

@@ -1,3 +1,0 @@
-Best Distance: 76.53
-Best Route: 0 1 8 3 6 5 4 7 2 0 
-Time Taken: 4ms
