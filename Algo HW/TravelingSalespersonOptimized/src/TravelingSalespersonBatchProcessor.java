@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TravelingSalespersonOptimized {
+public class TravelingSalespersonBatchProcessor {
 
     public static double[][] readGraph(String filePath) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(filePath));
@@ -65,7 +65,7 @@ public class TravelingSalespersonOptimized {
         array[j] = temp;
     }
 
-    public static void solveTSP(String inputFile, String outputFile) throws IOException {
+    public static void solveTSP(String inputFile, Result result) throws IOException {
         double[][] graph = readGraph(inputFile);
         int n = graph.length;
         int[] nodes = new int[n - 1]; // Nodes excluding the starting node (0)
@@ -74,8 +74,6 @@ public class TravelingSalespersonOptimized {
             nodes[i - 1] = i;
         }
 
-        // Result object to store the best result
-        Result result = new Result(Double.MAX_VALUE, null);
         int[] routeBuffer = new int[n + 1]; // Buffer for routes: [0, ..., ..., 0]
 
         long startTime = System.currentTimeMillis();
@@ -84,47 +82,50 @@ public class TravelingSalespersonOptimized {
         permute(nodes, 0, graph, result, routeBuffer);
 
         long endTime = System.currentTimeMillis();
-        long executionTime = endTime - startTime;
-
-        // Write results to output file
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(outputFile))) {
-            bw.write(String.format("Best Distance: %.2f%n", result.bestDistance));
-            bw.write("Best Route: ");
-            for (int node : result.bestRoute) {
-                bw.write(node + " ");
-            }
-            bw.newLine();
-            bw.write(String.format("Time Taken: %dms%n", executionTime));
-        }
-
-        // Print results to console for quick verification
-        System.out.printf("Best Distance: %.2f%n", result.bestDistance);
-        System.out.print("Best Route: ");
-        for (int node : result.bestRoute) {
-            System.out.print(node + " ");
-        }
-        System.out.println();
-        System.out.printf("Time Taken: %dms%n", executionTime);
+        result.executionTime = endTime - startTime;
     }
 
     static class Result {
         double bestDistance;
         int[] bestRoute;
+        long executionTime;
 
-        Result(double bestDistance, int[] bestRoute) {
-            this.bestDistance = bestDistance;
-            this.bestRoute = bestRoute;
+        Result() {
+            this.bestDistance = Double.MAX_VALUE;
+        }
+    }
+
+    public static void processBatch(String outputFile) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(outputFile))) {
+            bw.write("Input File, Best Distance, Best Route, Time Taken (ms)\n");
+
+            // Process only input4.txt through input8.txt
+            for (int i = 4; i <= 13; i++) {
+                String inputFile = "input" + i + ".txt";
+                System.out.println("Processing " + inputFile + "...");
+
+                Result result = new Result();
+
+                solveTSP(inputFile, result);
+
+                // Write results to the consolidated output file
+                bw.write(String.format("input%d.txt, %.2f, ", i, result.bestDistance));
+                for (int node : result.bestRoute) {
+                    bw.write(node + " ");
+                }
+                bw.write(String.format(", %d%n", result.executionTime));
+
+                // Print results to console for quick verification
+                System.out.printf("input%d.txt - Best Distance: %.2f, Time Taken: %dms%n", i, result.bestDistance, result.executionTime);
+            }
+        } catch (IOException e) {
+            System.err.println("An error occurred: " + e.getMessage());
         }
     }
 
     public static void main(String[] args) {
-//        try {
-//            // Use absolute or relative paths for your input and output files
-//            String inputFile = "input4.txt"; // Replace with your input file path
-//            String outputFile = "output.txt"; // Replace with your desired output file path
-//            solveTSP(inputFile, outputFile);
-//        } catch (IOException e) {
-//            System.err.println("An error occurred: " + e.getMessage());
-//        }
+        // Change this path if you want a different output location
+        String outputFile = "batch_output_limited.txt";
+        processBatch(outputFile);
     }
 }
