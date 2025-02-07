@@ -1,9 +1,7 @@
 public class Student extends Person{
     private String lunchPreference;
-    public Student(){
-        this.lunchPreference = null;
-    }
-    public Student(String lunchPreference){
+    public Student(String lunchPreference, String name){
+        super(name);
         this.lunchPreference = lunchPreference;
     }
     public String getLunchPreference() {
