@@ -1,4 +1,4 @@
-/*
+/**
  * Class: Classroom
  * Represents a classroom with a teacher, grade level, and students.
  */
