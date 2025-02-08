@@ -8,19 +8,13 @@ public class main(String[] args) {
     Student s4 = new Student("David", "Cold");
     Student s5 = new Student("Eve", "Hot");
     Student s6 = new Student("Frank", "Cold");
+    Student [] classA = {s1, s2, s3};
+    Student [] classB = {s4, s5, s6};
+    Classroom class1 = new Classroom(t1, 5, classA);
 
-    Classroom class1 = new Classroom(t1, 5);
-    Classroom.addStudent(s1);
-    class1.addStudent(s2);
-    class1.addStudent(s3);
-
-    Classroom class2 = new Classroom(t2, 6);
-    class2.addStudent(s4);
-    class2.addStudent(s5);
-    class2.addStudent(s6);
+    Classroom class2 = new Classroom(t2, 6, classB);
 
     // Print classroom details
-    System.out.println(class1);
     System.out.println("Roll Call:");
     //System.out.println(class1.rollCall());
     System.out.println("Lunch Report: "+class1.generateLunchReport());

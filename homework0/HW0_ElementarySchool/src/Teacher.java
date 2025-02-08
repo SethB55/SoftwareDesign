@@ -3,7 +3,8 @@ public class Teacher extends Person {
         this.id = idCounter;
         idCounter++;
     }
-    public Teacher(String subject, String degree, String university){
+    public Teacher(String name, String subject, String degree, String university){
+        super(name);
         this.subject = subject;
         this.degree = degree;
         this.university = university;

@@ -4,13 +4,9 @@ public class Classroom {
     private Teacher teacher;
     private ArrayList<Student> students;
 
-    public Classroom(Teacher t1, int gradeLevel) {
-        this.teacher = teacher;
-        this.gradeLevel = gradeLevel;
-    }
 
 
-    public void Classroom(Teacher teacher, int gradeLevel, ArrayList students) {
+    public Classroom(Teacher teacher, int gradeLevel, Student[] students) {
             this.teacher = teacher;
             this.gradeLevel = gradeLevel;
             this.students = students;
@@ -20,7 +16,7 @@ public class Classroom {
         System.out.print("Roll Call: ");
         for(int i =0; i < students.size(); i++){
             System.out.print(students.get(i));
-            System.out.print(students.get(i).getLunchPreference());
+            //System.out.print(students.get(i).getLunchPreference());
         }
     }
 
