@@ -63,7 +63,9 @@
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch06/GUIGraphicsCaseStudy06/GUIGraphicsCaseStudy06.iml" filepath="$PROJECT_DIR$/textbook_examples/ch06/GUIGraphicsCaseStudy06/GUIGraphicsCaseStudy06.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch07/GUIGraphicsCaseStudy07/GUIGraphicsCaseStudy07.iml" filepath="$PROJECT_DIR$/textbook_examples/ch07/GUIGraphicsCaseStudy07/GUIGraphicsCaseStudy07.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch08/GUIGraphicsCaseStudy08/GUIGraphicsCaseStudy08.iml" filepath="$PROJECT_DIR$/textbook_examples/ch08/GUIGraphicsCaseStudy08/GUIGraphicsCaseStudy08.iml" />
+      <module fileurl="file://$PROJECT_DIR$/homework0/HW0/HW0.iml" filepath="$PROJECT_DIR$/homework0/HW0/HW0.iml" />
       <module fileurl="file://$PROJECT_DIR$/homework0/HW0_ElementarySchool/HW0_ElementarySchool.iml" filepath="$PROJECT_DIR$/homework0/HW0_ElementarySchool/HW0_ElementarySchool.iml" />
+      <module fileurl="file://$PROJECT_DIR$/homework0/HW0_Restart/HW0_Restart.iml" filepath="$PROJECT_DIR$/homework0/HW0_Restart/HW0_Restart.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/supplemental/HelloWorld/HelloWorld.iml" filepath="$PROJECT_DIR$/textbook_examples/supplemental/HelloWorld/HelloWorld.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/supplemental/JUnitExample/JUnitExample.iml" filepath="$PROJECT_DIR$/textbook_examples/supplemental/JUnitExample/JUnitExample.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch37/MatcherMethods/MatcherMethods.iml" filepath="$PROJECT_DIR$/textbook_examples/ch37/MatcherMethods/MatcherMethods.iml" />
@@ -91,7 +93,6 @@
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch24/books_examples/books_examples.iml" filepath="$PROJECT_DIR$/textbook_examples/ch24/books_examples/books_examples.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch24/books_examples_withDatabaseAlreadyCreated/books_examples_withDatabaseAlreadyCreated.iml" filepath="$PROJECT_DIR$/textbook_examples/ch24/books_examples_withDatabaseAlreadyCreated/books_examples_withDatabaseAlreadyCreated.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch34/ch34_01/ch34_01.iml" filepath="$PROJECT_DIR$/textbook_examples/ch34/ch34_01/ch34_01.iml" />
-      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch36/ch36.iml" filepath="$PROJECT_DIR$/textbook_examples/ch36/ch36.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch36/MathTutor/src/com.deitel.additionprovider/com.deitel.additionprovider.iml" filepath="$PROJECT_DIR$/textbook_examples/ch36/MathTutor/src/com.deitel.additionprovider/com.deitel.additionprovider.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch36/MathTutor/src/com.deitel.mathtutor/com.deitel.mathtutor.iml" filepath="$PROJECT_DIR$/textbook_examples/ch36/MathTutor/src/com.deitel.mathtutor/com.deitel.mathtutor.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch36/MathTutor/src/com.deitel.multiplicationprovider/com.deitel.multiplicationprovider.iml" filepath="$PROJECT_DIR$/textbook_examples/ch36/MathTutor/src/com.deitel.multiplicationprovider/com.deitel.multiplicationprovider.iml" />
