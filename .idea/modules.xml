@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch29/AddressBook/AddressBook.iml" filepath="$PROJECT_DIR$/textbook_examples/ch29/AddressBook/AddressBook.iml" />
       <module fileurl="file://$PROJECT_DIR$/Algo HW/Algo HW.iml" filepath="$PROJECT_DIR$/Algo HW/Algo HW.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Algo HW2/Algo HW2.iml" filepath="$PROJECT_DIR$/Algo HW2/Algo HW2.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch22/BallAnimationTimer/BallAnimationTimer.iml" filepath="$PROJECT_DIR$/textbook_examples/ch22/BallAnimationTimer/BallAnimationTimer.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch22/BasicShapes/BasicShapes.iml" filepath="$PROJECT_DIR$/textbook_examples/ch22/BasicShapes/BasicShapes.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch29/BooksDatabaseExamples/BooksDatabaseExamples.iml" filepath="$PROJECT_DIR$/textbook_examples/ch29/BooksDatabaseExamples/BooksDatabaseExamples.iml" />
@@ -58,6 +59,7 @@
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/appL/FigL_01/FigL_01.iml" filepath="$PROJECT_DIR$/textbook_examples/appL/FigL_01/FigL_01.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/appL/FigL_02/FigL_02.iml" filepath="$PROJECT_DIR$/textbook_examples/appL/FigL_02/FigL_02.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch22/FontCSS/FontCSS.iml" filepath="$PROJECT_DIR$/textbook_examples/ch22/FontCSS/FontCSS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch15/TextFileApps10thEdition/Fractal.iml" filepath="$PROJECT_DIR$/textbook_examples/ch15/TextFileApps10thEdition/Fractal.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch04/GUIGraphicsCaseStudy04/GUIGraphicsCaseStudy04.iml" filepath="$PROJECT_DIR$/textbook_examples/ch04/GUIGraphicsCaseStudy04/GUIGraphicsCaseStudy04.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch05/GUIGraphicsCaseStudy05/GUIGraphicsCaseStudy05.iml" filepath="$PROJECT_DIR$/textbook_examples/ch05/GUIGraphicsCaseStudy05/GUIGraphicsCaseStudy05.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch06/GUIGraphicsCaseStudy06/GUIGraphicsCaseStudy06.iml" filepath="$PROJECT_DIR$/textbook_examples/ch06/GUIGraphicsCaseStudy06/GUIGraphicsCaseStudy06.iml" />
@@ -72,12 +74,13 @@
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch37/MatcherMethods/MatcherMethods.iml" filepath="$PROJECT_DIR$/textbook_examples/ch37/MatcherMethods/MatcherMethods.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch01/Painter/Painter.iml" filepath="$PROJECT_DIR$/textbook_examples/ch01/Painter/Painter.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch22/PolyShapes/PolyShapes.iml" filepath="$PROJECT_DIR$/textbook_examples/ch22/PolyShapes/PolyShapes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Algo HW2/Question3/Question3.iml" filepath="$PROJECT_DIR$/Algo HW2/Question3/Question3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oral_exam1/S20_TicTacToe_Hard/S20_TicTacToe_Hard.iml" filepath="$PROJECT_DIR$/oral_exam1/S20_TicTacToe_Hard/S20_TicTacToe_Hard.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch15/SerializationApps/SerializationApps.iml" filepath="$PROJECT_DIR$/textbook_examples/ch15/SerializationApps/SerializationApps.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch15/SerializationApps10thEdition/SerializationApps10thEdition.iml" filepath="$PROJECT_DIR$/textbook_examples/ch15/SerializationApps10thEdition/SerializationApps10thEdition.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch37/StreamMethods/StreamMethods.iml" filepath="$PROJECT_DIR$/textbook_examples/ch37/StreamMethods/StreamMethods.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/supplemental/SupermarketSimulation/SupermarketSimulation.iml" filepath="$PROJECT_DIR$/textbook_examples/supplemental/SupermarketSimulation/SupermarketSimulation.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch15/TextFileApps/TextFileApps.iml" filepath="$PROJECT_DIR$/textbook_examples/ch15/TextFileApps/TextFileApps.iml" />
-      <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch15/TextFileApps10thEdition/TextFileApps10thEdition.iml" filepath="$PROJECT_DIR$/textbook_examples/ch15/TextFileApps10thEdition/TextFileApps10thEdition.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch22/ThreeDimensionalShapes/ThreeDimensionalShapes.iml" filepath="$PROJECT_DIR$/textbook_examples/ch22/ThreeDimensionalShapes/ThreeDimensionalShapes.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/supplemental/Time2WithTesting/Time2WithTesting.iml" filepath="$PROJECT_DIR$/textbook_examples/supplemental/Time2WithTesting/Time2WithTesting.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch22/TimelineAnimation/TimelineAnimation.iml" filepath="$PROJECT_DIR$/textbook_examples/ch22/TimelineAnimation/TimelineAnimation.iml" />
@@ -292,6 +295,7 @@
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/appK/figK_08/figK_08.iml" filepath="$PROJECT_DIR$/textbook_examples/appK/figK_08/figK_08.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/appK/figK_10/figK_10.iml" filepath="$PROJECT_DIR$/textbook_examples/appK/figK_10/figK_10.iml" />
       <module fileurl="file://$PROJECT_DIR$/homework0/homework0.iml" filepath="$PROJECT_DIR$/homework0/homework0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StockProfit/javafx.iml" filepath="$PROJECT_DIR$/StockProfit/javafx.iml" />
       <module fileurl="file://$PROJECT_DIR$/quizzes/junit-quiz/junit-quiz.iml" filepath="$PROJECT_DIR$/quizzes/junit-quiz/junit-quiz.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch36/ExamplesShowingErrors/CircularDependency/src/module1/module1.iml" filepath="$PROJECT_DIR$/textbook_examples/ch36/ExamplesShowingErrors/CircularDependency/src/module1/module1.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch36/ExamplesShowingErrors/CircularDependency/src/module2/module2.iml" filepath="$PROJECT_DIR$/textbook_examples/ch36/ExamplesShowingErrors/CircularDependency/src/module2/module2.iml" />
