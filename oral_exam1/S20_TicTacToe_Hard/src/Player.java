@@ -1,6 +1,6 @@
 //PLAYER CLASS OUTLINE BEFORE CODING
 //Parent class for both the ComputerPlayer and HumanPlayer classes
-public abstract class Player {
+public class Player {
     protected String name;
     protected char side;
 
@@ -9,7 +9,7 @@ public abstract class Player {
         this.side = side;
     }
     //initialize board
-    public abstract void makeMove(Board board);
+    //public abstract void makeMove(Board board);
     //getters
     public String getName() {
         return name;
