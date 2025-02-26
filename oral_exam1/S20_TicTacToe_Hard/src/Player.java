@@ -1,6 +1,6 @@
 //PLAYER CLASS OUTLINE BEFORE CODING
 //Parent class for both the ComputerPlayer and HumanPlayer classes
-public class Player {
+public abstract class Player {
     protected String name;
     protected char side;
 
