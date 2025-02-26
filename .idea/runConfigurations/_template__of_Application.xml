@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="true" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="StockProfit" />
-    <module name="Algo HW2" />
+    <option name="MAIN_CLASS_NAME" value="Main" />
+    <module name="S20_TicTacToe_Hard" />
     <option name="VM_PARAMETERS" value="--module-path /usr/share/openjfx/lib --add-modules javafx.controls,javafx.fxml" />
     <method v="2">
       <option name="Make" enabled="true" />
