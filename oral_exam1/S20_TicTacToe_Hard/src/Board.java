@@ -14,17 +14,24 @@ public class Board {
     public void resetBoard(){
         for(int i = 0; i < 3; i++){
             for(int j = 0; j < 3; j++){
-                board[i][j] = 'O';
+                board[i][j] = ' ';
             }
         }
     }
 
     public void displayBoard(){
+        int count=0;
         for(int i = 0; i < 3; i++){
             for(int j = 0; j < 3; j++){
                 System.out.print(board[i][j]);
+                if(count != 2){
+                    count += 1;
+                    System.out.print(" | ");
+                }
             }
-            System.out.println("___");
+            System.out.println();
+            System.out.println("---------");
+            count = 0;
         }
     }
 }
