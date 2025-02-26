@@ -6,12 +6,10 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
-    <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Documents/javaFX/openjfx-17.0.14_linux-x64_bin-sdk/javafx-sdk-17.0.14/lib/javafx-swt.jar!/" />
+          <root url="jar://$USER_HOME$/Documents/javaFX/openjfx-17.0.14_linux-x64_bin-sdk/javafx-sdk-17.0.14/lib/javafx.swing.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -62,23 +60,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library>
-        <CLASSES>
-          <root url="jar://$USER_HOME$/Documents/javaFX/openjfx-17.0.14_linux-x64_bin-sdk/javafx-sdk-17.0.14/lib/javafx.swing.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library>
-        <CLASSES>
-          <root url="jar://$USER_HOME$/Documents/javaFX/openjfx-17.0.14_linux-x64_bin-sdk/javafx-sdk-17.0.14/lib/javafx.web.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="lib3" level="project" />
   </component>
 </module>
