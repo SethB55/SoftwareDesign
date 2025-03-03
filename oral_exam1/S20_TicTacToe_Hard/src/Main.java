@@ -21,14 +21,14 @@ public class Main {
             if(decision.equals("human")){
                 stayInLoopCondition = 0;
 
-                System.out.print("Say your name second guy: ");
+                System.out.print("Say your name player2: ");
                 String name2 = input.nextLine();
                 Player player2= new HumanPlayer(name2, 'O');
                 System.out.println("You are O's, " + name2);
             } else if(decision.equals("bot")){
                 stayInLoopCondition = 0;
                 Player player2= new HumanPlayer("bot", 'O');
-                System.out.println("Cool, bot will be O's");
+                System.out.println("Bot will be O's");
             } else {
                 System.out.println("Bro you didnt choose right, try again");
             }

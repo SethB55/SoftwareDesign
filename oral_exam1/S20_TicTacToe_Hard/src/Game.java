@@ -12,5 +12,30 @@ public class Game {
 
     public void startGame(){
 
+        Player currentPlayer = player1;
+        board.displayBoard();
+
+        while(true){
+            System.out.print(currentPlayer.getName() + "'s turn:");
+            currentPlayer.makeMove(board);
+            board.displayBoard();
+
+            if(board.checkWin(currentPlayer.getSide())){
+                System.out.println(currentPlayer.getSide() + "Wins tic tac toe!");
+                break;
+            }
+
+            if(board.checkFUll()){
+                System.out.println("CAT! (It's a draw!)");
+                break;
+            }
+
+            //switch turns
+            if(currentPlayer == player1){
+                currentPlayer = player2;
+            } else {
+                currentPlayer = player1;
+            }
+        }
     }
 }
