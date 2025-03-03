@@ -9,7 +9,7 @@ import java.util.Scanner; //weird glitch?
 public class Main {
     public static void main(String[] args) {
         int stayInLoopCondition = 1;
-        System.out.print("Say your name bruh: ");
+        System.out.print("Say your name user: ");
         Scanner input = new Scanner(System.in);
         String name = input.nextLine();
         Player player1 = new HumanPlayer(name, 'X');
