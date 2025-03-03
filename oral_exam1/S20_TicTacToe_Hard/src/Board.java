@@ -39,4 +39,16 @@ public class Board {
             count = 0;
         }
     }
+
+    public boolean makeMove(int row, int col, char symbol) {
+
+        return true;
+    }
+    public boolean checkSpace(int row, int col) {
+        if(board[row][col] != ' '){
+            return false;
+        } else {
+            return true;
+        }
+    }
 }
