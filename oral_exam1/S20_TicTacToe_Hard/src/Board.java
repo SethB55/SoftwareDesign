@@ -21,6 +21,7 @@ public class Board {
 
     public void displayBoard(){
         int count=0;
+        int count2=0;
         for(int i = 0; i < 3; i++){
             for(int j = 0; j < 3; j++){
                 System.out.print(board[i][j]);
@@ -30,7 +31,11 @@ public class Board {
                 }
             }
             System.out.println();
-            System.out.println("---------");
+            if(count2 != 2){
+                count2 += 1;
+                System.out.println("---------");
+            }
+
             count = 0;
         }
     }

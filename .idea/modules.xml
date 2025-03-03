@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ALGO HW3/ALGO HW3.iml" filepath="$PROJECT_DIR$/ALGO HW3/ALGO HW3.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch29/AddressBook/AddressBook.iml" filepath="$PROJECT_DIR$/textbook_examples/ch29/AddressBook/AddressBook.iml" />
       <module fileurl="file://$PROJECT_DIR$/Algo HW/Algo HW.iml" filepath="$PROJECT_DIR$/Algo HW/Algo HW.iml" />
       <module fileurl="file://$PROJECT_DIR$/Algo HW2/Algo HW2.iml" filepath="$PROJECT_DIR$/Algo HW2/Algo HW2.iml" />
@@ -72,10 +73,12 @@
       <module fileurl="file://$PROJECT_DIR$/homework0/HW0_Restart/HW0_Restart.iml" filepath="$PROJECT_DIR$/homework0/HW0_Restart/HW0_Restart.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/supplemental/HelloWorld/HelloWorld.iml" filepath="$PROJECT_DIR$/textbook_examples/supplemental/HelloWorld/HelloWorld.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/supplemental/JUnitExample/JUnitExample.iml" filepath="$PROJECT_DIR$/textbook_examples/supplemental/JUnitExample/JUnitExample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ALGO HW3/MarsCompoundEnergy/MarsCompoundEnergy.iml" filepath="$PROJECT_DIR$/ALGO HW3/MarsCompoundEnergy/MarsCompoundEnergy.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch37/MatcherMethods/MatcherMethods.iml" filepath="$PROJECT_DIR$/textbook_examples/ch37/MatcherMethods/MatcherMethods.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch01/Painter/Painter.iml" filepath="$PROJECT_DIR$/textbook_examples/ch01/Painter/Painter.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch22/PolyShapes/PolyShapes.iml" filepath="$PROJECT_DIR$/textbook_examples/ch22/PolyShapes/PolyShapes.iml" />
       <module fileurl="file://$PROJECT_DIR$/Algo HW2/Question3/Question3.iml" filepath="$PROJECT_DIR$/Algo HW2/Question3/Question3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ALGO HW3/RaceFinishAnalysis/RaceFinishAnalysis.iml" filepath="$PROJECT_DIR$/ALGO HW3/RaceFinishAnalysis/RaceFinishAnalysis.iml" />
       <module fileurl="file://$PROJECT_DIR$/oral_exam1/S20_TicTacToe_Hard/S20_TicTacToe_Hard.iml" filepath="$PROJECT_DIR$/oral_exam1/S20_TicTacToe_Hard/S20_TicTacToe_Hard.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch15/SerializationApps/SerializationApps.iml" filepath="$PROJECT_DIR$/textbook_examples/ch15/SerializationApps/SerializationApps.iml" />
       <module fileurl="file://$PROJECT_DIR$/textbook_examples/ch15/SerializationApps10thEdition/SerializationApps10thEdition.iml" filepath="$PROJECT_DIR$/textbook_examples/ch15/SerializationApps10thEdition/SerializationApps10thEdition.iml" />
