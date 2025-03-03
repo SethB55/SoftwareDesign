@@ -65,7 +65,15 @@ public class Board {
 
     //check win checks all possible combinations of
     // winning to determine if someone won
-    public boolean checkWin(){
-        return false;
+    public boolean checkWin(char side){
+        for( int i = 0; i < 3; i++){ //row and collumn being the same side check
+            if((board[i][0] == side && board[i][1] == side && board[i][2] == side) || // Row
+                    (board[0][i] == side && board[1][i] == side && board[2][i] == side)){
+                return true;
+            }
+        }
+        //else check diagonals but since there are no other cases, im using return and not if
+        return ((board[0][0] == side && board[1][1] == side && board[2][2] == side) ||
+                (board[0][2] == side && board[1][1] == side && board[2][0] == side));
     }
 }
