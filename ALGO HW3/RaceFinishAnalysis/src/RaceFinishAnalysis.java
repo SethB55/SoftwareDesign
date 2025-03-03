@@ -3,7 +3,7 @@ import java.util.*;
 
 public class RaceFinishAnalysis {
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader("/iahome/s/se/sebolen/IdeaProjects/sebolen_swd/ALGO HW3/RaceFinishAnalysis/input2.txt"));
+        BufferedReader br = new BufferedReader(new FileReader("/iahome/s/se/sebolen/IdeaProjects/sebolen_swd/ALGO HW3/RaceFinishAnalysis/input4.txt"));
         String[] data = br.readLine().split(",");
         br.close();
 
