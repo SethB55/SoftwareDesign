@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="textbook_examples">
+    <output-path>$PROJECT_DIR$/out/artifacts/textbook_examples</output-path>
+    <root id="root">
+      <element id="archive" name="textbook_examples.jar">
+        <element id="module-output" name="textbook_examples" />
+      </element>
+    </root>
+  </artifact>
+</component>
