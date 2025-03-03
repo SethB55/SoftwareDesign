@@ -11,6 +11,7 @@ public abstract class Player {
     //initialize board
     //public abstract void makeMove(Board board);
     //getters
+    public abstract void makeMove(Board board);
     public String getName() {
         return name;
     }
