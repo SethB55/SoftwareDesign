@@ -17,14 +17,15 @@ public class HumanPlayer extends Player{
                     + super.getSide() + " by entering a single digit for row (0-2) then column (0-2) ");
             row = input.nextInt();
             col = input.nextInt();
-            if(row >= 0 && row <= 3 && col >= 0 && col <= 3){
+            if(row >= 0 && row <= 3 && col >= 0 && col <= 3 && board.checkSpace(row, col)){ //in house check
                 stayInLoopCondition = 0;
                 System.out.print("Placing " + super.getSide() + " at row " + row + " and col " + col + ".");
-
+                board.makeMove(row, col, super.getSide()); //no check built into makeMove because we only get here if its valid
             } else {
                 System.out.println("Bro you didnt do it right, try again");
             }
         }
+
         }
 
 }
