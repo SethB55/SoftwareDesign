@@ -11,12 +11,11 @@ public class Game {
     }
 
     public void startGame(){
-
+        board.resetBoard();
         Player currentPlayer = player1;
         board.displayBoard();
 
         while(true){
-            System.out.print(currentPlayer.getName() + "'s turn:");
             currentPlayer.makeMove(board);
             board.displayBoard();
 

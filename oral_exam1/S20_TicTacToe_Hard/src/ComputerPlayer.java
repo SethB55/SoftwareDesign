@@ -17,7 +17,7 @@ public class ComputerPlayer extends Player{
             if(board.checkSpace(row, col)){
                 stayInLoopCondition = 0;
                 board.makeMove(row, col, super.getSide());
-                System.out.print("Placing " + super.getSide() + " at row " + row + " and col " + col + ".");
+                System.out.println("Placing " + super.getSide() + " at row " + row + " and col " + col + ".");
             }
         }
     }

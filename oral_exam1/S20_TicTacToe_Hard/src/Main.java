@@ -9,9 +9,11 @@ import java.util.Scanner; //weird glitch?
 public class Main {
     public static void main(String[] args) {
         int stayInLoopCondition = 1;
-        System.out.print("Say your name user: ");
+        Player player2;
+        System.out.print("Please enter your name player1: ");
         Scanner input = new Scanner(System.in);
         String name = input.nextLine();
+        String name2 = null;
         Player player1 = new HumanPlayer(name, 'X');
         String namwe = player1.getName();
         System.out.println("You are X's, " + namwe);
@@ -20,24 +22,25 @@ public class Main {
             String decision = input.nextLine();
             if(decision.equals("human")){
                 stayInLoopCondition = 0;
-
-                System.out.print("Say your name player2: ");
-                String name2 = input.nextLine();
-                Player player2= new HumanPlayer(name2, 'O');
+                System.out.print("Please enter your name player2: ");
+                name2 = input.nextLine();
                 System.out.println("You are O's, " + name2);
             } else if(decision.equals("bot")){
                 stayInLoopCondition = 0;
-                Player player2= new HumanPlayer("bot", 'O');
+                name2 = "bot";
                 System.out.println("Bot will be O's");
             } else {
                 System.out.println("Bro you didnt choose right, try again");
             }
         }
+
+
         System.out.println("Great! Starting game....");
         Board newBoard = new Board();
-
         newBoard.resetBoard();
-        newBoard.displayBoard();
+
+        Game game = new Game(player1, player2);
+        game.startGame();
     }
 
 }
