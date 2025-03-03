@@ -40,8 +40,19 @@ public class Board {
         }
     }
 
-    public boolean makeMove(int row, int col, char symbol) {
-
+    //only called after making sure inputs can work
+    public void makeMove(int row, int col, char symbol) {
+        board[row][col] = symbol;
+    }
+    //returns true if it is full, else returns false (not full)
+    public boolean checkFUll() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if(board[i][j] == ' '){
+                    return false;
+                }
+            }
+        }
         return true;
     }
     public boolean checkSpace(int row, int col) {
