@@ -62,4 +62,10 @@ public class Board {
             return true;
         }
     }
+
+    //check win checks all possible combinations of
+    // winning to determine if someone won
+    public boolean checkWin(){
+        return false;
+    }
 }
