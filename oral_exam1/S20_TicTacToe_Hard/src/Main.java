@@ -9,7 +9,7 @@ import java.util.Scanner; //weird glitch?
 public class Main {
     public static void main(String[] args) {
         int stayInLoopCondition = 1;
-        Player player2;
+        Player player2 = null;
         System.out.print("Please enter your name player1: ");
         Scanner input = new Scanner(System.in);
         String name = input.nextLine();
@@ -24,10 +24,13 @@ public class Main {
                 stayInLoopCondition = 0;
                 System.out.print("Please enter your name player2: ");
                 name2 = input.nextLine();
+                player2 = new HumanPlayer(name2, 'O');
+
                 System.out.println("You are O's, " + name2);
             } else if(decision.equals("bot")){
                 stayInLoopCondition = 0;
                 name2 = "bot";
+                player2 = new HumanPlayer(name2, 'O');
                 System.out.println("Bot will be O's");
             } else {
                 System.out.println("Bro you didnt choose right, try again");
