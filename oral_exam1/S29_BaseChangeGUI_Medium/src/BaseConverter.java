@@ -9,7 +9,7 @@ public class BaseConverter {
         return fromDecimal(decimalValue, desiredBase);
     }
 
-    private static int toDecimal(String number, int base) {
+    static int toDecimal(String number, int base) {
         int decimal = 0;
         int power = 0;
 
@@ -23,7 +23,7 @@ public class BaseConverter {
         return decimal;
     }
 
-    private static String fromDecimal(int decimal, int base) {
+    public static String fromDecimal(int decimal, int base) {
         if (decimal == 0) { // Base case
             return "0";
         }
