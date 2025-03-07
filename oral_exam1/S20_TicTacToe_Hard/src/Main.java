@@ -30,7 +30,7 @@ public class Main {
             } else if(decision.equals("bot")){
                 stayInLoopCondition = 0;
                 name2 = "bot";
-                player2 = new HumanPlayer(name2, 'O');
+                player2 = new ComputerPlayer(name2, 'O');
                 System.out.println("Bot will be O's");
             } else {
                 System.out.println("Bro you didnt choose right, try again");
