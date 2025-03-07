@@ -1,14 +1,27 @@
 public class BaseConverter {
 
+    /**
+     * Converts a number from one base to another.
+     * @param number The number to convert, represented as a string.
+     * @param currentBase The base of the given number.
+     * @param desiredBase The base to convert to.
+     * @return The converted number as a string.
+     * @throws IllegalArgumentException if the input number is invalid for the given base.
+     */
     public static String convert(String number, int currentBase, int desiredBase) {
         if (!isValidInput(number, currentBase)) {
             throw new IllegalArgumentException("Invalid number for base " + currentBase);
         }
-
         int decimalValue = toDecimal(number, currentBase);
         return fromDecimal(decimalValue, desiredBase);
     }
 
+    /**
+     * Converts a number from a given base to decimal.
+     * @param number The number in the given base.
+     * @param base The base of the given number.
+     * @return The decimal equivalent of the number.
+     */
     static int toDecimal(String number, int base) {
         int decimal = 0;
         int power = 0;
@@ -23,6 +36,12 @@ public class BaseConverter {
         return decimal;
     }
 
+    /**
+     * Converts a decimal number to the specified base.
+     * @param decimal The decimal number to convert.
+     * @param base The base to convert to.
+     * @return The number in the desired base as a string.
+     */
     public static String fromDecimal(int decimal, int base) {
         if (decimal == 0) { // Base case
             return "0";
@@ -37,36 +56,36 @@ public class BaseConverter {
         return result; // Return the final result
     }
 
-
+    /**
+     * Validates whether the given number is valid for the specified base.
+     * @param number The number to validate.
+     * @param base The base to check against.
+     * @return True if the number is valid for the base, false otherwise.
+     */
     private static boolean isValidInput(String number, int base) {
-        // Validate that the number only contains valid digits for the given base
-        // Loop through each character in the number string
         for (int i = 0; i < number.length(); i++) {
-            char c = Character.toUpperCase(number.charAt(i));  // Convert to uppercase to easy compare
-            // Check if the character is valid for the given base
-            if (base == 2) {
-                if (c != '0' && c != '1') {
-                    return false;  // Only 0 and 1 are valid for base 2
-                }
-            } else if (base == 8) {
-                if (c < '0' || c > '7') {
-                    return false;  // Only 0-7 are valid for base 8
-                }
-            } else if (base == 10) {
-                if (c < '0' || c > '9') {
-                    return false;  // Only 0-9 are valid for base 10
-                }
-            } else if (base == 16) {
-                if ((c < '0' || c > '9') && (c < 'A' || c > 'F')) {
-                    return false;  // 0-9 and A-F are valid for base 16
-                }
-            } else {
-                return false;  // Invalid base
+            char c = Character.toUpperCase(number.charAt(i)); // Convert to uppercase for easier comparison
+
+            if (base == 2 && (c != '0' && c != '1')) {
+                return false; // Only 0 and 1 are valid for base 2
+            } else if (base == 8 && (c < '0' || c > '7')) {
+                return false; // Only 0-7 are valid for base 8
+            } else if (base == 10 && (c < '0' || c > '9')) {
+                return false; // Only 0-9 are valid for base 10
+            } else if (base == 16 && (c < '0' || c > '9') && (c < 'A' || c > 'F')) {
+                return false; // 0-9 and A-F are valid for base 16
+            } else if (base != 2 && base != 8 && base != 10 && base != 16) {
+                return false; // Invalid base
             }
         }
-        return true;  // If no invalid chars are found, return true
+        return true; // If no invalid chars are found, return true
     }
 
+    /**
+     * Converts a character to its numerical value.
+     * @param c The character to convert.
+     * @return The numerical value of the character.
+     */
     private static int charToValue(char c) {
         if (Character.isDigit(c)) {
             return (c - '0');
@@ -74,7 +93,12 @@ public class BaseConverter {
         return (10 + (Character.toUpperCase(c) - 'A'));
     }
 
-    private static char valueToChar(int value) { //just overloading to char
+    /**
+     * Converts a numerical value to its corresponding character.
+     * @param value The numerical value to convert.
+     * @return The character representation of the value.
+     */
+    private static char valueToChar(int value) {
         if (value < 10) {
             return ((char) ('0' + value));
         }

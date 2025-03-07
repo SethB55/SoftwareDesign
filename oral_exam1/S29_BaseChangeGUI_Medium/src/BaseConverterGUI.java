@@ -2,6 +2,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+/**
+ * A graphical user interface for converting numbers between different bases.
+ * Supports bases 2, 8, 10, and 16.
+ */
 public class BaseConverterGUI extends JFrame implements ActionListener {
     private JTextField numberField;
     private JTextField currentBaseField;
@@ -9,6 +13,9 @@ public class BaseConverterGUI extends JFrame implements ActionListener {
     private JTextField resultField;
     private JButton convertButton;
 
+    /**
+     * Constructs the BaseConverterGUI and initializes the user interface.
+     */
     public BaseConverterGUI() {
         setTitle("Base Converter");
         setSize(400, 250);
@@ -33,18 +40,21 @@ public class BaseConverterGUI extends JFrame implements ActionListener {
 
         resultField = new JTextField();
         resultField.setEditable(false);
-        //add(new JLabel("Result:"));
         add(resultField);
 
         setVisible(true);
     }
 
+    /**
+     * Handles button click events to perform base conversion.
+     * @param e The ActionEvent triggered by user interaction.
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         try {
             String number = numberField.getText().trim().toUpperCase();
-            int currentBase = convertBaseToInt(currentBaseField.getText().trim());  // Manual conversion here, used .trim to weed out the whitespace
-            int desiredBase = convertBaseToInt(desiredBaseField.getText().trim());  // Manual conversion here
+            int currentBase = convertBaseToInt(currentBaseField.getText().trim());
+            int desiredBase = convertBaseToInt(desiredBaseField.getText().trim());
 
             if (currentBase == -1 || desiredBase == -1) {
                 showError("Base must be 2, 8, 10, or 16.");
@@ -61,31 +71,39 @@ public class BaseConverterGUI extends JFrame implements ActionListener {
         }
     }
 
+    /**
+     * Converts a string representation of a base into an integer.
+     * @param baseStr The string representing the base.
+     * @return The integer value of the base if valid, otherwise -1.
+     */
     private int convertBaseToInt(String baseStr) {
-        // Convert the base string to an integer manually
         int base = 0;
-        // Loop through each character of the base string
         for (int i = 0; i < baseStr.length(); i++) {
             char c = baseStr.charAt(i);
-            if (c >= '0' && c <= '9') { // If the character is a digit (0-9)
+            if (c >= '0' && c <= '9') {
                 base = base * 10 + (c - '0');
-            }
-            else if (c >= 'A' && c <= 'F') { // If the character is a letter (A-F for base 16)
-                base = base * 10 + (c - 'A' + 10);  // A = 10, B = 11, ..., F = 15
-            }
-            else {            // If the character is invalid (not a digit or letter A-F)
-                return -1;  // Return -1 to indicate invalid input
+            } else if (c >= 'A' && c <= 'F') {
+                base = base * 10 + (c - 'A' + 10);
+            } else {
+                return -1; // Invalid character
             }
         }
-        if (base == 2 || base == 8 || base == 10 || base == 16) { // Only return the base if it's one of the valid bases (2, 8, 10, 16)
-            return base;
-        }
-        return -1;  // Return -1 if the base is not valid
+        return isValidBase(base) ? base : -1;
     }
 
+    /**
+     * Checks if a given base is valid (2, 8, 10, or 16).
+     * @param base The base to check.
+     * @return true if the base is valid, false otherwise.
+     */
     private boolean isValidBase(int base) {
         return (base == 2 || base == 8 || base == 10 || base == 16);
     }
+
+    /**
+     * Displays an error message to the user in a dialog box.
+     * @param message The error message to display.
+     */
     private void showError(String message) {
         JOptionPane.showMessageDialog(this, message, "Error", JOptionPane.ERROR_MESSAGE);
     }
