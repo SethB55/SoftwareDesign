@@ -76,13 +76,14 @@ public class Matrix {
      * @param other Matrix to compare against
      * @return True if matrices are identical, otherwise false
      */
+    private static final double EPSILON = 1e-9; // Small tolerance
     public boolean equals(Matrix other) {
         if (this.rows != other.rows || this.columns != other.columns) {
             return false;
         }
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                if (this.data[i][j] != other.data[i][j]) {
+                if (Math.abs(this.data[i][j] - other.data[i][j]) > EPSILON) {
                     return false;
                 }
             }

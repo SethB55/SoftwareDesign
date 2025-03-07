@@ -34,7 +34,7 @@ public class Junit {
         double[][] array = {{3, 6, 9}, {12, 15, 18}, {21, 24, 27}};
         Matrix matrix = new Matrix(array);
 
-        Matrix sub1 = matrix.subMatrix(0, 2, 1, 2);
+        Matrix sub1 = matrix.subMatrix(0, 2, 1, 3);
         Matrix sub2 = matrix.subMatrix(1, 3, 0, 2);
 
         assertEquals("6.0 9.0 \n15.0 18.0 \n", sub1.toString());
