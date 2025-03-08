@@ -97,8 +97,9 @@ public class Matrix {
      * @param size The size of the square identity matrix
      * @return A new identity matrix
      */
-    public static Matrix identity(int size) {
+    public static Matrix identityMat(int size) {
         Matrix identity = new Matrix(size, size);
+
         for (int i = 0; i < size; i++) {
             identity.set(i, i, 1.0);
         }
@@ -137,7 +138,7 @@ public class Matrix {
      * Outputs: A new Matrix object
      */
     public static Matrix add(Matrix a, Matrix b) {
-        checkSameSize(a, b);
+        checkSameDimensions(a, b);
         Matrix result = new Matrix(a.rows, a.columns);
         for (int i = 0; i < a.rows; i++) {
             for (int j = 0; j < a.columns; j++) { // Adds the 2 elements of the matrices and then places sum
@@ -162,7 +163,7 @@ public class Matrix {
      * Outputs: None, modifies current matrix object
      */
     public void addInPlace(Matrix other) {
-        checkSameSize(this, other);
+        checkSameDimensions(this, other);
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) { // Adds the values from other matrix and modifies the current matrix
                 this.data[i][j] += other.data[i][j];
@@ -178,7 +179,7 @@ public class Matrix {
      * Outputs: A new Matrix object
      */
     public static Matrix subtract(Matrix a, Matrix b) {
-        checkSameSize(a, b);
+        checkSameDimensions(a, b);
         Matrix result = new Matrix(a.rows, a.columns); // Creates new matrix of proper size
         for (int i = 0; i < a.rows; i++) {
             for (int j = 0; j < a.columns; j++) { // Subtracts the 2 elements of the matrices and places difference into the proper spot in new matrix
@@ -203,7 +204,7 @@ public class Matrix {
      * Outputs: None, modifies current matrix object
      */
     public void subtractInPlace(Matrix other) {
-        checkSameSize(this, other);
+        checkSameDimensions(this, other);
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 this.data[i][j] -= other.data[i][j];
@@ -322,7 +323,7 @@ public class Matrix {
      * @param b Second matrix
      * @throws IllegalArgumentException If matrix dimensions do not match
      */
-    private static void checkSameSize(Matrix a, Matrix b) {
+    private static void checkSameDimensions(Matrix a, Matrix b) {
         if (a.rows != b.rows || a.columns != b.columns) {
             throw new IllegalArgumentException("Matrices must have the same dimensions.");
         }

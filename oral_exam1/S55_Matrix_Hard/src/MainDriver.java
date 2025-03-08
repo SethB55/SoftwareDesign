@@ -1,5 +1,5 @@
 public class MainDriver {
-    public static void main(String[] args) {
+    public static void main(String[] args) { //made sure it shows all functionality in a pretty way
 
         // Creating matrices for testing
         double[][] dataA = {{3, 5, 7}, {2, 4, 6}};
@@ -17,7 +17,7 @@ public class MainDriver {
         System.out.println("matA == diffSizeMat: " + matA.equals(diffSizeMat)); // Should be false
 
         // Testing Identity Matrix
-        Matrix identityMat = Matrix.identity(3);
+        Matrix identityMat = Matrix.identityMat(3);
         System.out.println("Identity Matrix (Size 3):\n" + identityMat);
 
         // Testing Submatrix
