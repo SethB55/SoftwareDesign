@@ -2,7 +2,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Junit {
+public class Junit { //tests base cases and edge cases
     @Test
     void convertBinaryToBinary() {
         BaseConverter converter = new BaseConverter();

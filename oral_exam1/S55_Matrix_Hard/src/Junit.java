@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class Junit {
+public class Junit { //made sure it tests base cases and edge cases
 
     @Test
     void testEquality() {
@@ -21,8 +21,8 @@ public class Junit {
     @Test
     void testIdentityMatrix() {
         // Tests if identity matrix is correctly generated
-        Matrix identity2 = Matrix.identity(2);
-        Matrix identity3 = Matrix.identity(3);
+        Matrix identity2 = Matrix.identityMat(2);
+        Matrix identity3 = Matrix.identityMat(3);
 
         assertEquals("1.0 0.0 \n0.0 1.0 \n", identity2.toString());
         assertEquals("1.0 0.0 0.0 \n0.0 1.0 0.0 \n0.0 0.0 1.0 \n", identity3.toString());
