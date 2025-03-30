@@ -347,8 +347,7 @@ public class Matrix {
     // =========================
 
     /**
-     * Converts the matrix to a formatted string representation.
-     *
+     * Converts the matrix to a formatted string representation
      * @return String representation of the matrix
      */
     @Override
