@@ -61,6 +61,5 @@
       </library>
     </orderEntry>
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="lib3" level="project" />
   </component>
 </module>
