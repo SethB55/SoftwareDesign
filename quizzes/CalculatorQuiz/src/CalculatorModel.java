@@ -2,9 +2,9 @@ import jdk.internal.icu.text.UCharacterIterator;
 
 import java.text.NumberFormat;
 
-public class CalculatorModel {
+public class CalculatorModel {  //  4/3/2025
     private static UCharacterIterator numberFormat;
-    private static final NumberFormat formatter = numberFormat.getInstance();
+    private static final NumberFormat formatter = numberFormat.getInstance(); //i dont think she went over how this is broke I imported what she did but its giving me error??
     private double number1;
     private char op=' ';
 
