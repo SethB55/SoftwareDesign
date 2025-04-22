@@ -1,0 +1,12 @@
+Easy:
+avg num of connections: 4.910543685947542
+num nodes with no edges: 671
+nodes with the most edges: [cores, bares] with 25 vertices each
+
+Medium:
+BFS: [pills, bills, cills, dills, fills, gills, hills, kills, mills, palls, piles, polls, pulls, rills, sills]
+DFS: [pills, reuse, spoke, mince, fifty, corms, roams, wreck, drunk, doled, doles, coals, meaty, solid, sniff]
+Size of largest connected set: [4493]
+
+Hard:
+Total weight of mst: 432100
