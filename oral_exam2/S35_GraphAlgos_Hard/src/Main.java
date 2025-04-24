@@ -33,6 +33,7 @@ public class Main {
             writer.write("BFS: " + bfsSample.subList(0, Math.min(15, bfsSample.size())) + "\n");
             writer.write("DFS: " + dfsSample.subList(0, Math.min(15, dfsSample.size())) + "\n");
             writer.write("Size of largest connected set: [" + largestComponent.size() + "]\n\n");
+            writer.write("Contents of largest connected set: " + largestComponent + "\n\n");
 
             MSTCalculator mstCalc = new MSTCalculator();
             int mstWeight = mstCalc.calculateMSTWeight(largestComponent, graph.getAdjacencyList());
