@@ -1,26 +1,32 @@
-//core graph structure + the builder
-
 import java.io.BufferedReader;
-        import java.io.FileReader;
-        import java.io.IOException;
-        import java.util.*;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.*;
 
 /**
- * Builds and stores the graph representation of the word connections.
+ * Represents a graph of words where edges exist between words that differ by exactly one edit distance.
+ * Provides functionality to build the graph from a file, analyze connectivity, and compute graph metrics.
  */
 public class WordGraph {
     private Map<String, List<String>> adjacencyList = new HashMap<>();
 
+    /**
+     * Builds the graph by reading words from the given file and connecting words
+     * that have an edit distance of one.
+     * @param filePath the path to the file containing words, one per line.
+     * @throws IOException if there is an issue reading the file.
+     */
     public void buildGraph(String filePath) throws IOException {
         List<String> words = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String word;
             while ((word = reader.readLine()) != null) {
                 words.add(word);
-                adjacencyList.put(word, new ArrayList<>());
+                adjacencyList.put(word, new ArrayList<>()); // Initialize adjacency list for each word
             }
         }
 
+        // Connect words with edit distance of one
         for (int i = 0; i < words.size(); i++) {
             for (int j = i + 1; j < words.size(); j++) {
                 if (WordUtils.isEditDistanceOne(words.get(i), words.get(j))) {
@@ -31,10 +37,18 @@ public class WordGraph {
         }
     }
 
+    /**
+     * Returns the adjacency list of the graph.
+     * @return the adjacency list.
+     */
     public Map<String, List<String>> getAdjacencyList() {
         return adjacencyList;
     }
 
+    /**
+     * Counts the number of isolated vertices (vertices with no neighbors).
+     * @return the count of isolated vertices.
+     */
     public int getIsolatedVertexCount() {
         int count = 0;
         for (List<String> neighbors : adjacencyList.values()) {
@@ -43,6 +57,10 @@ public class WordGraph {
         return count;
     }
 
+    /**
+     * Finds the words with the highest number of connections (most neighbors).
+     * @return a list of the most connected words.
+     */
     public List<String> getMostConnectedWords() {
         int max = 0;
         List<String> result = new ArrayList<>();
@@ -59,6 +77,10 @@ public class WordGraph {
         return result;
     }
 
+    /**
+     * Calculates the average number of edges per vertex in the graph.
+     * @return the average edges per vertex.
+     */
     public double getAverageEdgesPerVertex() {
         int total = 0;
         for (List<String> neighbors : adjacencyList.values()) {
