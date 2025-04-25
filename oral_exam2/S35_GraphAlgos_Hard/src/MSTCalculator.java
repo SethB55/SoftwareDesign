@@ -5,7 +5,7 @@ import java.util.*;
  * of a graph using Prim's algorithm. The graph is represented with words as nodes, and
  * edge weights are determined by the minimum magnitude of two connected words.
  */
-public class MSTCalculator {
+public class MSTCalculator {  //THIS DOESNT WORK BRUV
 
     /**
      * Represents an edge in the graph with a target vertex and a weight.

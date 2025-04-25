@@ -14,7 +14,7 @@ import java.awt.event.ActionListener;
  *     <li>Upload or retrieve files using buttons</li>
  * </ul>
  */
-public class ClientApp extends JFrame {
+public class ClientApp extends JFrame {                                                                                                                                                                                    
 
     private final JTextField fileNameField = new JTextField(20);
     private final JTextArea fileContentArea = new JTextArea(15, 40);
