@@ -6,24 +6,24 @@ import java.net.Socket;
  * The FileServer class implements a simple TCP server that allows clients to upload and retrieve text files.
  * Files are stored in a specified directory on the server.
  *
- * <p>Supported commands:
- * <ul>
- *     <li>UPLOAD - Uploads a file from the client to the server</li>
- *     <li>RETRIEVE - Retrieves a file from the server to the client</li>
- * </ul>
+ * Supported commands:
  *
- * <p>Usage:
- * <ul>
- *     <li>Start the server, which listens on a specific port (23645)</li>
- *     <li>The server continuously accepts client connections and processes their requests</li>
- * </ul>
+ *     UPLOAD - Uploads a file from the client to the server
+ *     RETRIEVE - Retrieves a file from the server to the client
+ *
+ *
+ * Usage:
+ *
+ *     start the server, which listens on a specific port (23645)
+ *     The server continuously accepts client connections and processes their requests
+ *
  */
 public class FileServer {
 
     private static final int PORT = 23645;
     private static final String FILE_DIRECTORY = "/iahome/s/se/sebolen/IdeaProjects/sebolen_swd/oral_exam2/S57_RemoteWork_Medium/textfiles";
 
-    private static final String UPLOAD = "UPLOAD";
+    private static final String UPLOAD = "UPLOAD";  //CHANGE THIS
     private static final String RETRIEVE = "RETRIEVE";
     private static final String SUCCESS = "SUCCESS";
     private static final String ERROR = "ERROR";

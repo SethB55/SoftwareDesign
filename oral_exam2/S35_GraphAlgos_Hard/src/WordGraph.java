@@ -20,7 +20,7 @@ public class WordGraph {
         List<String> words = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String word;
-            while ((word = reader.readLine()) != null) {
+            while ((word = reader.readLine()) != null) { //keep going till end
                 words.add(word);
                 adjacencyList.put(word, new ArrayList<>()); // Initialize adjacency list for each word
             }
@@ -29,7 +29,7 @@ public class WordGraph {
         // Connect words with edit distance of one
         for (int i = 0; i < words.size(); i++) {
             for (int j = i + 1; j < words.size(); j++) {
-                if (WordUtils.isEditDistanceOne(words.get(i), words.get(j))) {
+                if (isEditDistanceOne(words.get(i), words.get(j))) {
                     adjacencyList.get(words.get(i)).add(words.get(j));
                     adjacencyList.get(words.get(j)).add(words.get(i));
                 }
@@ -37,6 +37,29 @@ public class WordGraph {
         }
     }
 
+
+    /**
+     * Checks whether two words differ by exactly one character (edit distance of one).
+     * This method assumes both words must be of the same length to compare.
+     *
+     * @param w1 the first word to compare.
+     * @param w2 the second word to compare.
+     * @return true if the words differ by exactly one character, false otherwise.
+     */
+    public static boolean isEditDistanceOne(String w1, String w2) {
+        if (w1.length() != w2.length()) {
+            return false; // Words of different lengths can't have edit distance of one
+        }
+
+        int diff = 0; // Counter for differing characters
+        for (int i = 0; i < w1.length(); i++) {
+            if (w1.charAt(i) != w2.charAt(i)) {
+                diff++;
+                if (diff > 1) return false; // More than one difference, not valid
+            }
+        }
+        return diff == 1; // Valid only if exactly one difference
+    }
     /**
      * Returns the adjacency list of the graph.
      * @return the adjacency list.
