@@ -35,12 +35,6 @@ public class Main {
             writer.write("Size of largest connected set: [" + largestComponent.size() + "]\n\n");
             writer.write("Contents of largest connected set: " + largestComponent + "\n\n");
 
-            MSTCalculator mstCalc = new MSTCalculator();
-            int mstWeight = mstCalc.calculateMSTWeight(largestComponent, graph.getAdjacencyList());
-
-            writer.write("Hard:\n");
-            writer.write("Total weight of mst: " + mstWeight + "\n");
-
             System.out.println("Results written to graph_algos_output.txt");
         } catch (IOException e) {
             System.err.println("Error: " + e.getMessage());
