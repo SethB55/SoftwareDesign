@@ -21,7 +21,7 @@ public class TipCalculator extends Application
       stage.show(); // display the stage
    }
 
-   public static void main.Classroom.main(String[] args)
+   public static void Driver.Classroom.Driver(String[] args)
    {
       // create a TipCalculator object and call its start method
       launch(args); 
