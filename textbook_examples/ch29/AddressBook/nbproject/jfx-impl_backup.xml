@@ -498,7 +498,7 @@
     </target>
     
     
-    <!-- Check availability of main.Classroom.main JavaFX runtime jar (jfxrt.jar) -->
+    <!-- Check availability of Driver.Classroom.Driver JavaFX runtime jar (jfxrt.jar) -->
 
     <target name="-check-property-javafx.runtime">
         <echo message="javafx.runtime = ${javafx.runtime}" level="verbose"/>
@@ -915,8 +915,8 @@
     </target>
     
     <target name="-check-project">
-        <condition property="main.Classroom.main-class-available">
-            <isset property="javafx.main.Classroom.main.class"/>
+        <condition property="Driver.Classroom.Driver-class-available">
+            <isset property="javafx.Driver.Classroom.Driver.class"/>
         </condition>
         <condition property="vmargs-available">
             <and>
@@ -937,7 +937,7 @@
         <condition property="app-with-preloader">
             <and>
                 <istrue value="${preloader-available}"/>
-                <istrue value="${main.Classroom.main-class-available}"/>
+                <istrue value="${Driver.Classroom.Driver-class-available}"/>
             </and>
         </condition>
         <condition property="app-with-external-preloader-jar">
@@ -952,7 +952,7 @@
                 <not>
                     <istrue value="${preloader-available}"/>
                 </not>
-                <istrue value="${main.Classroom.main-class-available}"/>
+                <istrue value="${Driver.Classroom.Driver-class-available}"/>
             </and>
         </condition>
         <condition property="preloader-app">
@@ -1039,7 +1039,7 @@
                 <equals arg1="${javafx.signing.blob}" arg2="true" trim="true"/>
             </and>
         </condition>
-        <echo message="main.Classroom.main-class-available = ${main.Classroom.main-class-available}" level="verbose"/>
+        <echo message="Driver.Classroom.Driver-class-available = ${Driver.Classroom.Driver-class-available}" level="verbose"/>
         <echo message="vmargs-available = ${vmargs-available}" level="verbose"/>
         <echo message="preloader-available = ${preloader-available}" level="verbose"/>
         <echo message="app-with-preloader = ${app-with-preloader}" level="verbose"/>
@@ -1735,10 +1735,10 @@
                     var title = new String(project.getProperty("application.title"));
                     var mainclass;
                     if(isTrue(fx_in_swing_app) && isTrue(fx_ant_api_1_2)) {
-                        mainclass = new String(project.getProperty("main.Classroom.main.class"));
+                        mainclass = new String(project.getProperty("Driver.Classroom.Driver.class"));
                         app.setToolkit("swing");
                     } else {
-                        mainclass = new String(project.getProperty("javafx.main.Classroom.main.class"));
+                        mainclass = new String(project.getProperty("javafx.Driver.Classroom.Driver.class"));
                     }
                     var fallback = new String(project.getProperty("javafx.fallback.class"));
                     app.setName(title);
@@ -2238,10 +2238,10 @@
                     var title = new String(project.getProperty("application.title"));
                     var mainclass;
                     if(isTrue(fx_in_swing_app) && isTrue(fx_ant_api_1_2)) {
-                        mainclass = new String(project.getProperty("main.Classroom.main.class"));
+                        mainclass = new String(project.getProperty("Driver.Classroom.Driver.class"));
                         app.setToolkit("swing");
                     } else {
-                        mainclass = new String(project.getProperty("javafx.main.Classroom.main.class"));
+                        mainclass = new String(project.getProperty("javafx.Driver.Classroom.Driver.class"));
                     }
                     var fallback = new String(project.getProperty("javafx.fallback.class"));
                     app.setName(title);
@@ -2626,7 +2626,7 @@
             <filterchain id="jnlp.template.filter">
                 <replacetokens>
                     <token key="NAME" value="${dist.filename}"/>
-                    <token key="MAINCLASS" value="${main.Classroom.main.class}"/>
+                    <token key="MAINCLASS" value="${Driver.Classroom.Driver.class}"/>
                     <token key="FILESIZE" value="${dist.jar.size}"/>
                     <token key="VENDOR" value="${application.vendor}"/>
                     <token key="TITLE" value="${application.title}"/>
@@ -2724,7 +2724,7 @@
             <echo message="Warning: Parameters (if any) not passed to &lt;fx:application&gt; in fallback build mode due to JDK missing JavaScript support."/>
             <fx:application id="fxApp"
                 name="${application.title}"
-                mainClass="${javafx.main.Classroom.main.class}"
+                mainClass="${javafx.Driver.Classroom.Driver.class}"
                 fallbackClass="${javafx.fallback.class}">
                 <!-- PARAMETERS NOT PASSED IN FALLBACK -->
             </fx:application>
@@ -2736,7 +2736,7 @@
             <echo message="Warning: Parameters (if any) not passed to &lt;fx:application&gt; in fallback build mode due to JDK missing JavaScript support."/>
             <fx:application id="fxApp"
                 name="${application.title}"
-                mainClass="${javafx.main.Classroom.main.class}"
+                mainClass="${javafx.Driver.Classroom.Driver.class}"
                 preloaderClass="${javafx.preloader.class}"
                 fallbackClass="${javafx.fallback.class}">
                 <!-- PARAMETERS NOT PASSED IN FALLBACK -->
@@ -2749,7 +2749,7 @@
             <echo message="Warning: Parameters (if any) not passed to &lt;fx:application&gt; in fallback build mode due to JDK missing JavaScript support."/>
             <fx:application id="fxApp"
                 name="${application.title}"
-                mainClass="${main.Classroom.main.class}"
+                mainClass="${Driver.Classroom.Driver.class}"
                 fallbackClass="${javafx.fallback.class}"
                 toolkit="swing">
                 <!-- PARAMETERS NOT PASSED IN FALLBACK -->
