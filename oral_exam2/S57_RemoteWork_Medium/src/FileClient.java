@@ -5,17 +5,17 @@ import java.net.Socket;
  * The FileClient class handles the networking functionality for the client side.
  * It connects to a server via a TCP socket to either upload or retrieve text files.
  *
- * <p>Workflow:
- * <ul>
- *     <li>Upload: Sends a file name and its contents to the server</li>
- *     <li>Retrieve: Requests a file from the server and receives its contents</li>
- * </ul>
+ * Workflow:
+ *
+ *     Upload: Sends a file name and its contents to the server
+ *     Retrieve: Requests a file from the server and receives its contents
+ *
  */
 public class FileClient {
     private final String serverAddress;
     private final int port;
 
-    // Protocol constants for communication
+    // Protocol constants for communication FIX THIS SETH
     private static final String UPLOAD = "UPLOAD";
     private static final String RETRIEVE = "RETRIEVE";
     private static final String SUCCESS = "SUCCESS";

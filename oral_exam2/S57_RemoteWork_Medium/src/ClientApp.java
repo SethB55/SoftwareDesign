@@ -7,12 +7,12 @@ import java.awt.event.ActionListener;
  * The ClientApp class provides a graphical user interface (GUI) for interacting with the FileClient.
  * Users can upload and retrieve text files from the server through this Swing-based interface.
  *
- * <p>Features:
- * <ul>
- *     <li>Enter a file name</li>
- *     <li>Enter or display file contents</li>
- *     <li>Upload or retrieve files using buttons</li>
- * </ul>
+ * Features:
+ *
+ *     Enter a file name
+ *     Enter or display file contents
+ *     Upload or retrieve files using buttons
+ *
  */
 public class ClientApp extends JFrame {                                                                                                                                                                                    
 
