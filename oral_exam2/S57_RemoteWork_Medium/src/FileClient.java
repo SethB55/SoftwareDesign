@@ -15,12 +15,6 @@ public class FileClient {
     private final String serverAddress;
     private final int port;
 
-    // Protocol constants for communication FIX THIS SETH
-    private static final String UPLOAD = "UPLOAD";
-    private static final String RETRIEVE = "RETRIEVE";
-    private static final String SUCCESS = "SUCCESS";
-    private static final String ERROR = "ERROR";
-
     /**
      * Constructs a FileClient with the given server address and port number.
      *
@@ -45,11 +39,11 @@ public class FileClient {
                 PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
                 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))
         ) {
-            out.println(RETRIEVE);
+            out.println("RETRIEVE");
             out.println(fileName);
 
             String response = in.readLine();
-            if (SUCCESS.equals(response)) {
+            if ("SUCCESS".equals(response)) {
                 String line;
                 while ((line = in.readLine()) != null) {
                     result.append(line).append("\n");
@@ -77,7 +71,7 @@ public class FileClient {
                 PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
                 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))
         ) {
-            out.println(UPLOAD);
+            out.println("UPLOAD");
             out.println(fileName);
             for (String line : contents.split("\n")) {
                 out.println(line);
