@@ -23,11 +23,6 @@ public class FileServer {
     private static final int PORT = 23645;
     private static final String FILE_DIRECTORY = "/iahome/s/se/sebolen/IdeaProjects/sebolen_swd/oral_exam2/S57_RemoteWork_Medium/textfiles";
 
-    private static final String UPLOAD = "UPLOAD";  //CHANGE THIS
-    private static final String RETRIEVE = "RETRIEVE";
-    private static final String SUCCESS = "SUCCESS";
-    private static final String ERROR = "ERROR";
-
     /**
      * Main method to start the server.
      * @param args Command-line arguments (not used)
@@ -68,12 +63,12 @@ public class FileServer {
             String command = in.readLine();
             String fileName = in.readLine();
 
-            if (RETRIEVE.equals(command)) {
+            if ("RETRIEVE".equals(command)) {
                 handleRetrieve(fileName, out);
-            } else if (UPLOAD.equals(command)) {
+            } else if ("UPLOAD".equals(command)) {
                 handleUpload(fileName, in, out);
             } else {
-                out.println(ERROR + ": Unknown command");
+                out.println("ERROR: Unknown command");
             }
         } catch (IOException e) {
             System.err.println("Client communication error: " + e.getMessage());
@@ -89,17 +84,17 @@ public class FileServer {
     private static void handleRetrieve(String fileName, PrintWriter out) {
         File file = new File(FILE_DIRECTORY, fileName);
         if (file.exists()) {
-            out.println(SUCCESS);
+            out.println("SUCCESS");
             try (BufferedReader fileReader = new BufferedReader(new FileReader(file))) {
                 String line;
                 while ((line = fileReader.readLine()) != null) {
                     out.println(line);
                 }
             } catch (IOException e) {
-                out.println(ERROR + ": Error reading file");
+                out.println("ERROR: Error reading file");
             }
         } else {
-            out.println(ERROR + ": File not found");
+            out.println("ERROR: File not found");
         }
     }
 
@@ -118,9 +113,9 @@ public class FileServer {
                 fileWriter.write(line);
                 fileWriter.newLine();
             }
-            out.println(SUCCESS);
+            out.println("SUCCESS");
         } catch (IOException e) {
-            out.println(ERROR + ": Error writing file");
+            out.println("ERROR: Error writing file");
         }
     }
 }
