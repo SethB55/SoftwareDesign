@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"<Unnamed>","l":"AccessWarningTracker"},{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"CriticalLogHandler"},{"p":"<Unnamed>","l":"LogHandler"},{"p":"<Unnamed>","l":"LogRecord"},{"p":"<Unnamed>","l":"Main"},{"p":"<Unnamed>","l":"SessionLogTracker"}];updateSearchResults();
