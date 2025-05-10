@@ -1,27 +1,50 @@
-
 import javax.swing.*;
-        import java.awt.*;
+import java.awt.*;
 
 public class ElectionJFrame extends JFrame {
+    private ElectionModel model;
+
+    // Constructor - no return type needed
     public ElectionJFrame() {
-        setTitle("Basic Election Simulator");
-        setSize(800, 600);
+        model = new ElectionModel();
+        initializeUI();
+    }
+
+    // Method to set up the UI - void return type specified
+    private void initializeUI() {
+        setTitle("US Election Simulator");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(1000, 800);
 
-        // Create tabs
         JTabbedPane tabbedPane = new JTabbedPane();
-
-        // States tab (just 3 sample states for now)
-        JPanel statesPanel = new JPanel(new GridLayout(0, 2));
-        statesPanel.add(new StatePanel("California", 54));
-        statesPanel.add(new StatePanel("Texas", 40));
-        statesPanel.add(new StatePanel("Florida", 30));
-
-        tabbedPane.addTab("States", new JScrollPane(statesPanel));
-
-        // Results tab (just placeholder)
-        tabbedPane.addTab("Results", new JLabel("Results will appear here"));
+        tabbedPane.addTab("States", createStatesPanel());
+        tabbedPane.addTab("Results", new ResultsPanel(model));
 
         add(tabbedPane);
+        setLocationRelativeTo(null); // Center the window
+    }
+
+    // Method to create states panel - returns JComponent
+    private JComponent createStatesPanel() {
+        JPanel panel = new JPanel(new GridLayout(0, 2, 10, 10));
+
+        // Add some sample states
+        panel.add(new StatePanel("Alabama", 9, model));
+        panel.add(new StatePanel("Alaska", 3, model));
+
+
+        panel.add(new StatePanel("California", 54, model));
+        panel.add(new StatePanel("Texas", 40, model));
+        panel.add(new StatePanel("Florida", 30, model));
+
+        return new JScrollPane(panel);
+    }
+
+    // Main method - static with void return type
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            ElectionJFrame frame = new ElectionJFrame();
+            frame.setVisible(true);
+        });
     }
 }
