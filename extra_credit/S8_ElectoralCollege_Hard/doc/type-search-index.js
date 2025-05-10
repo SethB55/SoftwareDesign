@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"ElectionJFrame"},{"p":"<Unnamed>","l":"ElectionModel"},{"p":"<Unnamed>","l":"Main"},{"p":"<Unnamed>","l":"ResultsPanel"},{"p":"<Unnamed>","l":"StatePanel"}];updateSearchResults();
