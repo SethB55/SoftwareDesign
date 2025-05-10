@@ -5,35 +5,39 @@ import java.awt.event.*;
 public class StatePanel extends JPanel {
     private final ElectionModel model;
     private final String stateName;
+    private final JLabel voteLabel;
 
-    public StatePanel(String stateName, int votes, ElectionModel model) {
+    public StatePanel(String stateName, int votes, ElectionModel model, ResultsPanel resultsPanel) {
         this.model = model;
         this.stateName = stateName;
 
         setLayout(new BorderLayout());
-        setBorder(BorderFactory.createTitledBorder(stateName + " (" + votes + ")"));
+        setBorder(BorderFactory.createTitledBorder(stateName + " (" + votes + " votes)"));
 
+        // Vote count label - initialize with current selection
+        voteLabel = new JLabel("Current: Undecided");
+        add(voteLabel, BorderLayout.NORTH);
+
+        // Radio buttons
         ButtonGroup group = new ButtonGroup();
         JRadioButton demButton = new JRadioButton("Democrat");
         JRadioButton repButton = new JRadioButton("Republican");
         JRadioButton undecidedButton = new JRadioButton("Undecided", true);
 
-        // Add action listeners
         ActionListener listener = e -> {
-            if (demButton.isSelected()) {
-                model.setStateVote(stateName, "Democrat");
-            } else if (repButton.isSelected()) {
-                model.setStateVote(stateName, "Republican");
-            } else {
-                model.setStateVote(stateName, "Undecided");
-            }
+            String party = "Undecided";
+            if (demButton.isSelected()) party = "Democrat";
+            if (repButton.isSelected()) party = "Republican";
+
+            model.setStateVote(stateName, party);
+            voteLabel.setText("Current: " + party);
+            resultsPanel.updateResults();
         };
 
         demButton.addActionListener(listener);
         repButton.addActionListener(listener);
         undecidedButton.addActionListener(listener);
 
-        // Add to panel
         group.add(demButton);
         group.add(repButton);
         group.add(undecidedButton);
