@@ -30,15 +30,65 @@ public class ElectionModel {
      * Initializes all states and districts with their electoral votes and default choices.
      */
     private void initializeAllStates() {
-        // Regular winner-takes-all states
+        // Initialize all 50 states and Washington D.C. with their electoral votes
         stateVotes.put("Alabama", 9);                  // Alabama has 9 electoral votes
         stateVotes.put("Alaska", 3);                   // Alaska has 3 electoral votes
-        // ... [other state initializations remain unchanged]
+        stateVotes.put("Arizona", 11);                 // Arizona has 11 electoral votes
+        stateVotes.put("Arkansas", 6);                 // Arkansas has 6 electoral votes
+        stateVotes.put("California", 54);              // California has 54 electoral votes
+        stateVotes.put("Colorado", 10);                // Colorado has 10 electoral votes
+        stateVotes.put("Connecticut", 7);              // Connecticut has 7 electoral votes
+        stateVotes.put("Delaware", 3);                 // Delaware has 3 electoral votes
+        stateVotes.put("District of Columbia", 3);     // Washington D.C. has 3 electoral votes
+        stateVotes.put("Florida", 30);                 // Florida has 30 electoral votes
+        stateVotes.put("Georgia", 16);                 // Georgia has 16 electoral votes
+        stateVotes.put("Hawaii", 4);                   // Hawaii has 4 electoral votes
+        stateVotes.put("Idaho", 4);                    // Idaho has 4 electoral votes
+        stateVotes.put("Illinois", 19);                // Illinois has 19 electoral votes
+        stateVotes.put("Indiana", 11);                 // Indiana has 11 electoral votes
+        stateVotes.put("Iowa", 6);                     // Iowa has 6 electoral votes
+        stateVotes.put("Kansas", 6);                   // Kansas has 6 electoral votes
+        stateVotes.put("Kentucky", 8);                 // Kentucky has 8 electoral votes
+        stateVotes.put("Louisiana", 8);                // Louisiana has 8 electoral votes
+        stateVotes.put("Maine", 2);                    // Maine has 2 state-wide electoral votes
+        stateVotes.put("Maryland", 10);                // Maryland has 10 electoral votes
+        stateVotes.put("Massachusetts", 11);           // Massachusetts has 11 electoral votes
+        stateVotes.put("Michigan", 15);                // Michigan has 15 electoral votes
+        stateVotes.put("Minnesota", 10);               // Minnesota has 10 electoral votes
+        stateVotes.put("Mississippi", 6);              // Mississippi has 6 electoral votes
+        stateVotes.put("Missouri", 10);                // Missouri has 10 electoral votes
+        stateVotes.put("Montana", 4);                  // Montana has 4 electoral votes
+        stateVotes.put("Nebraska", 2);                 // Nebraska has 2 state-wide electoral votes
+        stateVotes.put("Nevada", 6);                   // Nevada has 6 electoral votes
+        stateVotes.put("New Hampshire", 4);            // New Hampshire has 4 electoral votes
+        stateVotes.put("New Jersey", 14);              // New Jersey has 14 electoral votes
+        stateVotes.put("New Mexico", 5);               // New Mexico has 5 electoral votes
+        stateVotes.put("New York", 28);                // New York has 28 electoral votes
+        stateVotes.put("North Carolina", 16);          // North Carolina has 16 electoral votes
+        stateVotes.put("North Dakota", 3);             // North Dakota has 3 electoral votes
+        stateVotes.put("Ohio", 17);                    // Ohio has 17 electoral votes
+        stateVotes.put("Oklahoma", 7);                 // Oklahoma has 7 electoral votes
+        stateVotes.put("Oregon", 8);                   // Oregon has 8 electoral votes
+        stateVotes.put("Pennsylvania", 19);            // Pennsylvania has 19 electoral votes
+        stateVotes.put("Rhode Island", 4);             // Rhode Island has 4 electoral votes
+        stateVotes.put("South Carolina", 9);           // South Carolina has 9 electoral votes
+        stateVotes.put("South Dakota", 3);             // South Dakota has 3 electoral votes
+        stateVotes.put("Tennessee", 11);               // Tennessee has 11 electoral votes
+        stateVotes.put("Texas", 40);                   // Texas has 40 electoral votes
+        stateVotes.put("Utah", 6);                     // Utah has 6 electoral votes
+        stateVotes.put("Vermont", 3);                  // Vermont has 3 electoral votes
+        stateVotes.put("Virginia", 13);                // Virginia has 13 electoral votes
+        stateVotes.put("Washington", 12);              // Washington has 12 electoral votes
+        stateVotes.put("West Virginia", 4);            // West Virginia has 4 electoral votes
+        stateVotes.put("Wisconsin", 10);               // Wisconsin has 10 electoral votes
+        stateVotes.put("Wyoming", 3);                  // Wyoming has 3 electoral votes
 
-        // Maine and Nebraska districts (split electoral votes)
-        districtVotes.put("Maine-1", 1);               // Maine's 1st district
-        districtVotes.put("Maine-2", 1);               // Maine's 2nd district
-        // ... [other district initializations remain unchanged]
+        // Initialize congressional districts for Maine and Nebraska
+        districtVotes.put("Maine-1", 1);               // Maine's 1st congressional district
+        districtVotes.put("Maine-2", 1);               // Maine's 2nd congressional district
+        districtVotes.put("Nebraska-1", 1);            // Nebraska's 1st congressional district
+        districtVotes.put("Nebraska-2", 1);            // Nebraska's 2nd congressional district
+        districtVotes.put("Nebraska-3", 1);            // Nebraska's 3rd congressional district
 
         // Initialize all states and districts to "Undecided"
         for (String state : stateVotes.keySet()) {
