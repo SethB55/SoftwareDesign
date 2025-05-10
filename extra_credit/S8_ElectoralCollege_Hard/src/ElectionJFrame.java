@@ -38,17 +38,67 @@ public class ElectionJFrame extends JFrame {
      * @return A JComponent containing all state panels
      */
     private JComponent createStatesPanel() {
-        JPanel panel = new JPanel(new GridLayout(0, 4, 10, 10));  // 4 columns, dynamic rows, with spacing
+        JPanel panel = new JPanel(new GridLayout(0, 7, 10, 10));  // 7 columns, dynamic rows, with spacing
 
-        // Add all states (would normally loop through a collection)
-        addState(panel, "Alabama", 9);                            // Alabama panel
-        addState(panel, "Alaska", 3);                             // Alaska panel
-        // ... [other state additions remain unchanged]
+        // Add all 50 states and Washington D.C.
+        addState(panel, "Alabama", 9);
+        addState(panel, "Alaska", 3);
+        addState(panel, "Arizona", 11);
+        addState(panel, "Arkansas", 6);
+        addState(panel, "California", 54);
+        addState(panel, "Colorado", 10);
+        addState(panel, "Connecticut", 7);
+        addState(panel, "Delaware", 3);
+        addState(panel, "District of Columbia", 3);
+        addState(panel, "Florida", 30);
+        addState(panel, "Georgia", 16);
+        addState(panel, "Hawaii", 4);
+        addState(panel, "Idaho", 4);
+        addState(panel, "Illinois", 19);
+        addState(panel, "Indiana", 11);
+        addState(panel, "Iowa", 6);
+        addState(panel, "Kansas", 6);
+        addState(panel, "Kentucky", 8);
+        addState(panel, "Louisiana", 8);
+        addState(panel, "Maine", 2); // State-wide votes
+        addState(panel, "Maryland", 10);
+        addState(panel, "Massachusetts", 11);
+        addState(panel, "Michigan", 15);
+        addState(panel, "Minnesota", 10);
+        addState(panel, "Mississippi", 6);
+        addState(panel, "Missouri", 10);
+        addState(panel, "Montana", 4);
+        addState(panel, "Nebraska", 2); // State-wide votes
+        addState(panel, "Nevada", 6);
+        addState(panel, "New Hampshire", 4);
+        addState(panel, "New Jersey", 14);
+        addState(panel, "New Mexico", 5);
+        addState(panel, "New York", 28);
+        addState(panel, "North Carolina", 16);
+        addState(panel, "North Dakota", 3);
+        addState(panel, "Ohio", 17);
+        addState(panel, "Oklahoma", 7);
+        addState(panel, "Oregon", 8);
+        addState(panel, "Pennsylvania", 19);
+        addState(panel, "Rhode Island", 4);
+        addState(panel, "South Carolina", 9);
+        addState(panel, "South Dakota", 3);
+        addState(panel, "Tennessee", 11);
+        addState(panel, "Texas", 40);
+        addState(panel, "Utah", 6);
+        addState(panel, "Vermont", 3);
+        addState(panel, "Virginia", 13);
+        addState(panel, "Washington", 12);
+        addState(panel, "West Virginia", 4);
+        addState(panel, "Wisconsin", 10);
+        addState(panel, "Wyoming", 3);
 
-        // Add districts (Maine and Nebraska)
-        addState(panel, "Maine-1", 1);                            // Maine CD-1
-        addState(panel, "Maine-2", 1);                            // Maine CD-2
-        // ... [other district additions remain unchanged]
+        // Add congressional districts for Maine and Nebraska
+        addState(panel, "Maine-1", 1); // Maine's 1st congressional district
+        addState(panel, "Maine-2", 1); // Maine's 2nd congressional district
+        addState(panel, "Nebraska-1", 1); // Nebraska's 1st congressional district
+        addState(panel, "Nebraska-2", 1); // Nebraska's 2nd congressional district
+        addState(panel, "Nebraska-3", 1); // Nebraska's 3rd congressional district
 
         return new JScrollPane(panel);                            // Make scrollable
     }
