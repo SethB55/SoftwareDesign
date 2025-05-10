@@ -8,6 +8,10 @@ public class ResultsPanel extends JPanel {
     private final JLabel winnerLabel;
 
     public ResultsPanel(ElectionModel model) {
+        if (model == null) {
+            throw new IllegalArgumentException("Model cannot be null");
+        }
+
         this.model = model;
         setLayout(new GridLayout(3, 1, 10, 10));
         setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
@@ -32,8 +36,9 @@ public class ResultsPanel extends JPanel {
         repLabel.setText("Republican: " + model.getRepublicanTotal() + " votes");
 
         if (model.hasWinner()) {
-            winnerLabel.setText(model.getWinner() + " WINS THE ELECTION!");
-            winnerLabel.setForeground(model.getWinner().equals("DEMOCRAT") ? Color.BLUE : Color.RED);
+            String winner = model.getWinner();
+            winnerLabel.setText(winner + " WINS THE ELECTION!");
+            winnerLabel.setForeground("DEMOCRAT".equals(winner) ? Color.BLUE : Color.RED);
         } else {
             winnerLabel.setText("No winner yet - Need 270 to win");
             winnerLabel.setForeground(Color.BLACK);

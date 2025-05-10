@@ -39,6 +39,7 @@ public class ElectionModel {
         stateVotes.put("Kansas", 6);
         stateVotes.put("Kentucky", 8);
         stateVotes.put("Louisiana", 8);
+        stateVotes.put("Maine", 2); // State-wide votes
         stateVotes.put("Maryland", 10);
         stateVotes.put("Massachusetts", 11);
         stateVotes.put("Michigan", 15);
@@ -79,55 +80,60 @@ public class ElectionModel {
         districtVotes.put("Nebraska-3", 1);
 
         // Initialize all to Undecided
-        stateVotes.keySet().forEach(s -> stateChoices.put(s, "Undecided"));
-        districtVotes.keySet().forEach(d -> districtChoices.put(d, "Undecided"));
+        for (String state : stateVotes.keySet()) {
+            stateChoices.put(state, "Undecided");
+        }
+        for (String district : districtVotes.keySet()) {
+            districtChoices.put(district, "Undecided");
+        }
+    }
+
+    public void setStateVote(String name, String party) {
+        if (name == null || party == null) {
+            throw new IllegalArgumentException("Name and party cannot be null");
+        }
+
+        // First check if it's a state
+        if (stateVotes.containsKey(name)) {
+            String previousChoice = stateChoices.get(name);
+            int votes = stateVotes.get(name);
+
+            updateTotals(previousChoice, party, votes);
+            stateChoices.put(name, party);
+        }
+        // Then check if it's a district
+        else if (districtVotes.containsKey(name)) {
+            String previousChoice = districtChoices.get(name);
+            int votes = districtVotes.get(name);
+
+            updateTotals(previousChoice, party, votes);
+            districtChoices.put(name, party);
+        } else {
+            throw new IllegalArgumentException("Unknown state or district: " + name);
+        }
+    }
+
+    private void updateTotals(String previousChoice, String newChoice, int votes) {
+        // Remove votes from previous choice
+        if ("Democrat".equals(previousChoice)) {
+            democratTotal -= votes;
+        } else if ("Republican".equals(previousChoice)) {
+            republicanTotal -= votes;
+        }
+
+        // Add votes to new choice
+        if ("Democrat".equals(newChoice)) {
+            democratTotal += votes;
+        } else if ("Republican".equals(newChoice)) {
+            republicanTotal += votes;
+        }
     }
 
     public String getStateSelection(String state) {
-        return stateChoices.getOrDefault(state, "Undecided");
-    }
-
-    // ... [rest of the existing methods remain unchanged] ...
-    public void setStateVote(String state, String party) {
-        String previousChoice = stateChoices.get(state);
-        int votes = stateVotes.get(state);
-
-        // Remove votes from previous choice
-        if (previousChoice.equals("Democrat")) {
-            democratTotal -= votes;
-        } else if (previousChoice.equals("Republican")) {
-            republicanTotal -= votes;
+        if (stateVotes.containsKey(state)) {
+            return stateChoices.get(state);
         }
-
-        // Add votes to new choice
-        if (party.equals("Democrat")) {
-            democratTotal += votes;
-        } else if (party.equals("Republican")) {
-            republicanTotal += votes;
-        }
-
-        stateChoices.put(state, party);
-    }
-
-    public void setDistrictVote(String district, String party) {
-        String previousChoice = districtChoices.get(district);
-        int votes = districtVotes.get(district);
-
-        // Remove votes from previous choice
-        if (previousChoice.equals("Democrat")) {
-            democratTotal -= votes;
-        } else if (previousChoice.equals("Republican")) {
-            republicanTotal -= votes;
-        }
-
-        // Add votes to new choice
-        if (party.equals("Democrat")) {
-            democratTotal += votes;
-        } else if (party.equals("Republican")) {
-            republicanTotal += votes;
-        }
-
-        districtChoices.put(district, party);
+        return districtChoices.getOrDefault(state, "Undecided");
     }
 
     public int getDemocratTotal() {

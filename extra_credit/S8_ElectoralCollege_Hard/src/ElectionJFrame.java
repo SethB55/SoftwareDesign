@@ -25,7 +25,7 @@ public class ElectionJFrame extends JFrame {
     }
 
     private JComponent createStatesPanel() {
-        JPanel panel = new JPanel(new GridLayout(0, 7, 10, 10)); // 3 columns for better layout
+        JPanel panel = new JPanel(new GridLayout(0, 7, 10, 10));
 
         // Add all states
         addState(panel, "Alabama", 9);
@@ -47,6 +47,7 @@ public class ElectionJFrame extends JFrame {
         addState(panel, "Kansas", 6);
         addState(panel, "Kentucky", 8);
         addState(panel, "Louisiana", 8);
+        addState(panel, "Maine", 2);
         addState(panel, "Maryland", 10);
         addState(panel, "Massachusetts", 11);
         addState(panel, "Michigan", 15);
@@ -54,6 +55,7 @@ public class ElectionJFrame extends JFrame {
         addState(panel, "Mississippi", 6);
         addState(panel, "Missouri", 10);
         addState(panel, "Montana", 4);
+        addState(panel, "Nebraska", 2);
         addState(panel, "Nevada", 6);
         addState(panel, "New Hampshire", 4);
         addState(panel, "New Jersey", 14);
@@ -78,15 +80,12 @@ public class ElectionJFrame extends JFrame {
         addState(panel, "Wisconsin", 10);
         addState(panel, "Wyoming", 3);
 
-        // Add Maine and Nebraska districts
-        addDistrict(panel, "Maine-1", 1);
-        addDistrict(panel, "Maine-2", 1);
-        addState(panel, "Maine", 2); // State-wide votes
-        addDistrict(panel, "Nebraska-1", 1);
-        addDistrict(panel, "Nebraska-2", 1);
-        addDistrict(panel, "Nebraska-3", 1);
-        addState(panel, "Nebraska", 2); // State-wide votes
-
+        // Add districts
+        addState(panel, "Maine-1", 1);
+        addState(panel, "Maine-2", 1);
+        addState(panel, "Nebraska-1", 1);
+        addState(panel, "Nebraska-2", 1);
+        addState(panel, "Nebraska-3", 1);
 
         return new JScrollPane(panel);
     }
@@ -95,15 +94,16 @@ public class ElectionJFrame extends JFrame {
         panel.add(new StatePanel(name, votes, model, resultsPanel));
     }
 
-    private void addDistrict(JPanel panel, String name, int votes) {
-        // Could create a special DistrictPanel if needed, using StatePanel for now
-        panel.add(new StatePanel(name, votes, model, resultsPanel));
-    }
-
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            ElectionJFrame frame = new ElectionJFrame();
-            frame.setVisible(true);
+            try {
+                ElectionJFrame frame = new ElectionJFrame();
+                frame.setVisible(true);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null,
+                        "Error starting application: " + e.getMessage(),
+                        "Startup Error", JOptionPane.ERROR_MESSAGE);
+            }
         });
     }
 }

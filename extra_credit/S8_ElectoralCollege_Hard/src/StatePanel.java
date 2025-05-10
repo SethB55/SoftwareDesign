@@ -8,26 +8,35 @@ public class StatePanel extends JPanel {
     private final JLabel voteLabel;
 
     public StatePanel(String stateName, int votes, ElectionModel model, ResultsPanel resultsPanel) {
+        if (model == null || resultsPanel == null) {
+            throw new IllegalArgumentException("Model and resultsPanel cannot be null");
+        }
+        if (stateName == null || stateName.isEmpty()) {
+            throw new IllegalArgumentException("State name cannot be null or empty");
+        }
+
         this.model = model;
         this.stateName = stateName;
 
         setLayout(new BorderLayout());
         setBorder(BorderFactory.createTitledBorder(stateName + " (" + votes + " votes)"));
 
-        // Vote count label - initialize with current selection
-        voteLabel = new JLabel("Current: Undecided");
+        voteLabel = new JLabel("Current: " + model.getStateSelection(stateName));
         add(voteLabel, BorderLayout.NORTH);
 
-        // Radio buttons
         ButtonGroup group = new ButtonGroup();
         JRadioButton demButton = new JRadioButton("Democrat");
         JRadioButton repButton = new JRadioButton("Republican");
-        JRadioButton undecidedButton = new JRadioButton("Undecided", true);
+        JRadioButton undecidedButton = new JRadioButton("Undecided");
+
+        String currentSelection = model.getStateSelection(stateName);
+        demButton.setSelected("Democrat".equals(currentSelection));
+        repButton.setSelected("Republican".equals(currentSelection));
+        undecidedButton.setSelected(!demButton.isSelected() && !repButton.isSelected());
 
         ActionListener listener = e -> {
-            String party = "Undecided";
-            if (demButton.isSelected()) party = "Democrat";
-            if (repButton.isSelected()) party = "Republican";
+            String party = undecidedButton.isSelected() ? "Undecided" :
+                    demButton.isSelected() ? "Democrat" : "Republican";
 
             model.setStateVote(stateName, party);
             voteLabel.setText("Current: " + party);
